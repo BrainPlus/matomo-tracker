@@ -248,6 +248,7 @@ class MatomoTracker {
     required String eventName,
     String? currentScreenId,
     String? path,
+    Map<String, String>? dimensions,
   }) {
     final widgetName = context.widget.toStringShort();
     trackScreenWithName(
@@ -255,6 +256,7 @@ class MatomoTracker {
       eventName: eventName,
       currentScreenId: currentScreenId,
       path: path,
+      dimensions: dimensions,
     );
   }
 
@@ -277,6 +279,7 @@ class MatomoTracker {
     required String eventName,
     String? currentScreenId,
     String? path,
+    Map<String, String>? dimensions,
   }) {
     assert(currentScreenId == null || currentScreenId.length == 6);
     this.currentScreenId = currentScreenId ?? randomAlphaNumeric(6);
@@ -286,6 +289,7 @@ class MatomoTracker {
         eventName: eventName,
         action: widgetName,
         path: path,
+        dimensions: dimensions,
       ),
     );
   }
